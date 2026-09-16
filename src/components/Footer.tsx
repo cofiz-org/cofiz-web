@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const APK_URL = "https://github.com/cofiz-org/cofiz-dist/releases/latest";
 
@@ -21,7 +22,7 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6 py-14">
         <div className="grid grid-cols-[2fr_1fr_1fr] gap-10 max-md:grid-cols-1">
           <div>
-            <a href="/" className="flex items-center gap-2">
+            <Link href="/" className="flex items-center gap-2">
               <Image
                 src="/logo.png"
                 alt="Cofiz logo"
@@ -33,7 +34,7 @@ export default function Footer() {
               <span className="text-[17px] font-bold tracking-tight text-primary">
                 Cofiz
               </span>
-            </a>
+            </Link>
             <p className="mt-4 max-w-xs text-[13px] leading-6 text-muted">
               One shared ledger for Ethiopian coffee businesses. Daily
               prices, sales, debts and reports — even offline.

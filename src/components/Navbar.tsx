@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const links = [
   { label: "Features", href: "#features" },
@@ -10,7 +11,7 @@ export default function Navbar() {
   return (
     <header className="w-full bg-white">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <a href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2">
           <Image
             src="/logo.png"
             alt="Cofiz logo"
@@ -24,7 +25,7 @@ export default function Navbar() {
           <span className="text-[17px] font-bold tracking-tight text-primary">
             Cofiz
           </span>
-        </a>
+        </Link>
         <nav aria-label="Main navigation" className="hidden items-center gap-7 md:flex">
           {links.map((l) => (
             <a
