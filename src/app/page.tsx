@@ -13,7 +13,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-x-clip bg-page text-foreground">
+    <div className="relative min-h-screen overflow-x-clip text-foreground">
       <Navbar />
       <main>
         <HeroSection />
