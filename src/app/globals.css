@@ -1,25 +1,111 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #262626;
+  --page: #0b0907;
+  --block: #171210;
+  --block-hover: #1e1814;
+  --chrome: #100d0b;
+  --line: #2b241d;
+  --line-strong: #443a30;
+  --accent: #d47311;
+  --accent-light: #f09a45;
+  --success: #8fae7b;
+  --foreground: #f5f0ea;
+  --muted: #a69c92;
+  --subtle: #7a7066;
 }
 
 @theme inline {
-  --color-background: var(--background);
+  --color-page: var(--page);
+  --color-block: var(--block);
+  --color-block-hover: var(--block-hover);
+  --color-chrome: var(--chrome);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-accent: var(--accent);
+  --color-accent-light: var(--accent-light);
+  --color-success: var(--success);
   --color-foreground: var(--foreground);
-  --color-primary: #d47311;
-  --color-primary-dark: #b25e0c;
-  --color-primary-soft: #fdf3e7;
-  --color-ink: #262626;
-  --color-muted: #737373;
-  --color-canvas: #fafafb;
-  --color-line: #ececec;
-  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background: var(--page);
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+::selection {
+  background: rgb(212 115 17 / 0.35);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-light);
+  outline-offset: 3px;
+}
+
+@layer components {
+  .frame {
+    border-radius: 18px;
+    padding: 2px;
+    gap: 2px;
+    background: var(--line-strong);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise-in {
+  animation: rise-in 0.7s cubic-bezier(0, 0, 0.2, 1) both;
+}
+
+@keyframes reveal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal-rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 30%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
