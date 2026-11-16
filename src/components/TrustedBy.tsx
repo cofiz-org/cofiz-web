@@ -31,7 +31,7 @@ export default function TrustedBy() {
             >
               <Icon className="h-5 w-5 text-muted" />
               <div>
-                <p className="text-sm font-medium text-white">{name}</p>
+                <p className="text-sm font-medium text-foreground">{name}</p>
                 <p className="mt-1 text-[12px] text-subtle">{note}</p>
               </div>
             </div>
