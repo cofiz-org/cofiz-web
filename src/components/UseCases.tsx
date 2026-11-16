@@ -46,7 +46,7 @@ export default function UseCases() {
               className="pointer-events-none absolute -right-24 -top-32 h-[26rem] w-[26rem] rounded-full blur-3xl"
               style={{
                 background:
-                  "radial-gradient(circle, rgba(212,115,17,0.34), transparent 70%)",
+                  "radial-gradient(circle, var(--glow-warm-soft), transparent 70%)",
               }}
               aria-hidden="true"
             />
@@ -55,7 +55,7 @@ export default function UseCases() {
                 <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-subtle">
                   The ledger
                 </p>
-                <h2 className="mt-5 max-w-xl text-3xl font-normal leading-[1.15] tracking-[-0.02em] text-white sm:text-4xl lg:text-5xl">
+                <h2 className="mt-5 max-w-xl text-3xl font-normal leading-[1.15] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-5xl">
                   One ledger, always current.
                 </h2>
                 <p className="mt-6 max-w-lg text-[15px] leading-[1.65] text-muted">
@@ -103,7 +103,7 @@ export default function UseCases() {
                             Default
                           </span>
                         )}
-                        <span className="font-mono text-[13px] text-white">
+                        <span className="font-mono text-[13px] text-foreground">
                           {price}
                         </span>
                       </span>
@@ -118,7 +118,7 @@ export default function UseCases() {
                     {["A", "T", "D", "S"].map((initial) => (
                       <span
                         key={initial}
-                        className="flex h-6 w-6 items-center justify-center rounded-full border border-line-strong bg-block-hover font-mono text-[9px] text-zinc-300"
+                        className="flex h-6 w-6 items-center justify-center rounded-full border border-line-strong bg-block-hover font-mono text-[9px] text-muted"
                       >
                         {initial}
                       </span>
@@ -142,17 +142,17 @@ export default function UseCases() {
             <a
               key={item.title}
               href={item.href}
-              className="group flex flex-col justify-between gap-10 rounded-[16px] bg-block p-8 transition-all duration-300 hover:-translate-y-0.5 hover:bg-block-hover hover:shadow-[0_24px_50px_-30px_rgba(0,0,0,0.9)]"
+              className="group flex flex-col justify-between gap-10 rounded-[16px] bg-block p-8 transition-all duration-300 hover:-translate-y-0.5 hover:bg-block-hover hover:shadow-[var(--shadow-hover)]"
             >
               <div>
-                <h3 className="text-xl font-medium tracking-[-0.01em] text-white">
+                <h3 className="text-xl font-medium tracking-[-0.01em] text-foreground">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-[15px] leading-[1.65] text-muted">
                   {item.desc}
                 </p>
               </div>
-              <p className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.15em] text-subtle transition-colors group-hover:text-zinc-300">
+              <p className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.15em] text-subtle transition-colors group-hover:text-foreground">
                 {item.label}
                 <ArrowUpRightIcon className="h-3 w-3 -translate-x-1 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
               </p>
