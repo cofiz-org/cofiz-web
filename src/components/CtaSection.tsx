@@ -9,7 +9,7 @@ export default function CtaSection() {
             className="pointer-events-none absolute left-1/2 top-0 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/3 rounded-full blur-3xl"
             style={{
               background:
-                "radial-gradient(circle, rgba(212,115,17,0.32), transparent 70%)",
+                "radial-gradient(circle, var(--glow-warm), transparent 70%)",
             }}
             aria-hidden="true"
           />
@@ -17,7 +17,7 @@ export default function CtaSection() {
             <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-subtle">
               Free to start
             </p>
-            <h2 className="mt-5 text-balance text-3xl font-normal leading-[1.12] tracking-[-0.02em] text-white sm:text-4xl lg:text-5xl">
+            <h2 className="mt-5 text-balance text-3xl font-normal leading-[1.12] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-5xl">
               Every kilo. Every birr. On the books.
             </h2>
             <p className="mt-5 max-w-lg text-[15px] leading-[1.65] text-muted">
@@ -28,7 +28,7 @@ export default function CtaSection() {
               <DownloadButton className="w-full sm:w-auto" />
               <a
                 href="#how-it-works"
-                className="inline-flex w-full items-center justify-center rounded-md border border-line-strong bg-chrome px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-block-hover sm:w-auto sm:py-3.5"
+                className="inline-flex w-full items-center justify-center rounded-md border border-line-strong bg-chrome px-5 py-3 text-sm font-medium text-foreground transition-colors hover:bg-block-hover sm:w-auto sm:py-3.5"
               >
                 See how it works
               </a>
