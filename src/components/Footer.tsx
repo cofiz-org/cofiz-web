@@ -1,4 +1,5 @@
 import Logo from "@/components/Logo";
+import ThemeToggle from "@/components/ThemeToggle";
 import { APK_URL, APK_VERSION, GITHUB_URL } from "@/site";
 
 const columns = [
@@ -63,7 +64,7 @@ export default function Footer() {
                     <li key={link.label}>
                       <a
                         href={link.href}
-                        className="text-[14px] text-muted transition-colors hover:text-white"
+                        className="text-[14px] text-muted transition-colors hover:text-foreground"
                       >
                         {link.label}
                       </a>
@@ -79,9 +80,14 @@ export default function Footer() {
           <p className="text-[12px] text-subtle">
             © 2026 Cofiz. All rights reserved.
           </p>
-          <p className="text-[12px] text-subtle">
-            Made for Ethiopian coffee businesses.
-          </p>
+          <div className="flex items-center gap-4">
+            <p className="text-[12px] text-subtle">
+              Made for Ethiopian coffee businesses.
+            </p>
+            <span className="h-3 w-px bg-line" aria-hidden="true" />
+            <span className="text-[12px] text-subtle">Theme</span>
+            <ThemeToggle />
+          </div>
         </div>
       </div>
     </footer>

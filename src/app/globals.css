@@ -1,6 +1,65 @@
 @import "tailwindcss";
 
-:root {
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root,
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --page: #faf9f7;
+  --block: #ffffff;
+  --block-hover: #fdfcfa;
+  --chrome: #f6f4f1;
+  --line: #ebe7e1;
+  --line-strong: #dcd5cc;
+  --accent: #b45309;
+  --accent-light: #92400e;
+  --success: #3f7d4e;
+  --foreground: #1c1917;
+  --muted: #57534e;
+  --subtle: #8a837b;
+
+  --page-bg:
+    radial-gradient(900px 520px at 12% -6%, rgb(180 83 9 / 0.07), transparent 62%),
+    radial-gradient(820px 480px at 100% 2%, rgb(120 134 150 / 0.09), transparent 60%),
+    radial-gradient(900px 600px at 50% 100%, rgb(180 83 9 / 0.04), transparent 65%),
+    var(--page);
+  --glow-warm: rgb(180 83 9 / 0.14);
+  --glow-warm-soft: rgb(180 83 9 / 0.1);
+  --glow-warm-mid: rgb(180 83 9 / 0.07);
+  --glow-warm-strong: rgb(180 83 9 / 0.26);
+  --glow-green: rgb(63 125 78 / 0.12);
+  --hero-fade: linear-gradient(
+    to right,
+    #ffffff 32%,
+    rgb(255 255 255 / 0.72) 58%,
+    transparent
+  );
+  --cube-stroke: rgb(180 83 9 / 0.4);
+  --cube-top-a: #e9e0d4;
+  --cube-top-b: #dcd0be;
+  --cube-left-a: #ded2c1;
+  --cube-left-b: #cdbfa9;
+  --cube-right-a: #cbbcaa;
+  --cube-right-b: #dccdb9;
+  --frame-shadow:
+    0 1px 2px rgb(28 25 23 / 0.04),
+    0 16px 32px -26px rgb(28 25 23 / 0.28);
+  --shadow-hover: 0 24px 50px -30px rgb(28 25 23 / 0.25);
+  --shadow-device: 0 30px 70px -30px rgb(28 25 23 / 0.35);
+  --btn-bg: #1c1917;
+  --btn-hover: #3a3531;
+  --btn-fg: #ffffff;
+  --btn-muted: rgb(255 255 255 / 0.6);
+  --btn-line: rgb(255 255 255 / 0.15);
+  --btn-soft: rgb(255 255 255 / 0.1);
+  --selection-bg: rgb(180 83 9 / 0.18);
+  --selection-fg: #1c1917;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
   --page: #0b0907;
   --block: #171210;
   --block-hover: #1e1814;
@@ -13,6 +72,37 @@
   --foreground: #f5f0ea;
   --muted: #a69c92;
   --subtle: #7a7066;
+
+  --page-bg: var(--page);
+  --glow-warm: rgb(212 115 17 / 0.28);
+  --glow-warm-soft: rgb(212 115 17 / 0.3);
+  --glow-warm-mid: rgb(212 115 17 / 0.14);
+  --glow-warm-strong: rgb(212 115 17 / 0.55);
+  --glow-green: rgb(143 174 123 / 0.18);
+  --hero-fade: linear-gradient(
+    to right,
+    #171210 30%,
+    rgb(23 18 16 / 0.55) 55%,
+    transparent
+  );
+  --cube-stroke: rgb(107 87 69 / 0.9);
+  --cube-top-a: #4a3423;
+  --cube-top-b: #38271b;
+  --cube-left-a: #302218;
+  --cube-left-b: #251a12;
+  --cube-right-a: #1e150f;
+  --cube-right-b: #271c13;
+  --frame-shadow: 0 20px 40px -30px rgb(0 0 0 / 0.7);
+  --shadow-hover: 0 24px 50px -30px rgb(0 0 0 / 0.9);
+  --shadow-device: 0 30px 70px -30px rgb(0 0 0 / 0.9);
+  --btn-bg: #ffffff;
+  --btn-hover: #e4e4e7;
+  --btn-fg: #0b0907;
+  --btn-muted: rgb(11 9 7 / 0.5);
+  --btn-line: rgb(11 9 7 / 0.14);
+  --btn-soft: rgb(11 9 7 / 0.05);
+  --selection-bg: rgb(212 115 17 / 0.35);
+  --selection-fg: #ffffff;
 }
 
 @theme inline {
@@ -28,27 +118,35 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-subtle: var(--subtle);
+  --color-btn: var(--btn-bg);
+  --color-btn-hover: var(--btn-hover);
+  --color-btn-fg: var(--btn-fg);
+  --color-btn-muted: var(--btn-muted);
+  --color-btn-line: var(--btn-line);
+  --color-btn-soft: var(--btn-soft);
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, "SF Mono", Menlo, monospace;
 }
 
 html {
+  zoom: 0.9;
   scroll-behavior: smooth;
 }
 
 body {
-  background: var(--page);
+  background: var(--page-bg);
+  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-sans);
 }
 
 ::selection {
-  background: rgb(212 115 17 / 0.35);
-  color: #fff;
+  background: var(--selection-bg);
+  color: var(--selection-fg);
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent-light);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
 
@@ -58,6 +156,10 @@ body {
     padding: 2px;
     gap: 2px;
     background: var(--line-strong);
+  }
+
+  .frame > * {
+    box-shadow: var(--frame-shadow);
   }
 }
 

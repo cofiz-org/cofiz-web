@@ -30,7 +30,7 @@ export default function ControlSection() {
           <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-subtle">
             Built for the work
           </p>
-          <h2 className="mt-5 text-3xl font-normal leading-[1.15] tracking-[-0.02em] text-white sm:text-4xl lg:text-5xl">
+          <h2 className="mt-5 text-3xl font-normal leading-[1.15] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-5xl">
             The three numbers you check every day.
           </h2>
           <p className="mt-6 text-[15px] leading-[1.65] text-muted">
@@ -52,7 +52,7 @@ export default function ControlSection() {
                 Price book
               </span>
             </div>
-            <h3 className="mt-6 text-xl font-medium tracking-[-0.01em] text-white">
+            <h3 className="mt-6 text-xl font-medium tracking-[-0.01em] text-foreground">
               Today&apos;s prices
             </h3>
             <p className="mt-2 text-[15px] leading-[1.65] text-muted">
@@ -67,7 +67,7 @@ export default function ControlSection() {
                     className="flex items-center justify-between py-2.5 text-[13px] first:pt-0 last:pb-0"
                   >
                     <span className="text-muted">{name}</span>
-                    <span className="font-mono text-white">{value}</span>
+                    <span className="font-mono text-foreground">{value}</span>
                   </div>
                 ))}
               </div>
@@ -89,7 +89,7 @@ export default function ControlSection() {
                 Balances
               </span>
             </div>
-            <h3 className="mt-6 text-xl font-medium tracking-[-0.01em] text-white">
+            <h3 className="mt-6 text-xl font-medium tracking-[-0.01em] text-foreground">
               Who owes what
             </h3>
             <p className="mt-2 text-[15px] leading-[1.65] text-muted">
@@ -111,7 +111,7 @@ export default function ControlSection() {
                     </span>
                     <span
                       className={`font-mono text-[13px] ${
-                        value === "0" ? "text-success" : "text-white"
+                        value === "0" ? "text-success" : "text-foreground"
                       }`}
                     >
                       {value}
@@ -121,7 +121,7 @@ export default function ControlSection() {
               </ul>
               <p className="mt-3 flex items-center justify-between border-t border-line pt-3 font-mono text-[10px] uppercase tracking-[0.12em] text-subtle">
                 Open
-                <span className="text-white">1,240 ETB</span>
+                <span className="text-foreground">1,240 ETB</span>
               </p>
             </div>
           </div>
@@ -138,7 +138,7 @@ export default function ControlSection() {
                 Month end
               </span>
             </div>
-            <h3 className="mt-6 text-xl font-medium tracking-[-0.01em] text-white">
+            <h3 className="mt-6 text-xl font-medium tracking-[-0.01em] text-foreground">
               The month at a glance
             </h3>
             <p className="mt-2 text-[15px] leading-[1.65] text-muted">
@@ -164,7 +164,7 @@ export default function ControlSection() {
                 <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-subtle">
                   Net this week
                 </span>
-                <span className="flex items-center gap-1.5 font-mono text-[13px] text-white">
+                <span className="flex items-center gap-1.5 font-mono text-[13px] text-foreground">
                   +5,500
                   <ArrowUpRightIcon className="h-3 w-3 text-success" />
                 </span>

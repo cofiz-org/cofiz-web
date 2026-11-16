@@ -13,7 +13,7 @@ export default function Logo({ priority = false }: { priority?: boolean }) {
         unoptimized
         priority={priority}
       />
-      <span className="text-[15px] font-medium tracking-[-0.01em] text-white">
+      <span className="text-[15px] font-medium tracking-[-0.01em] text-foreground">
         Cofiz
       </span>
     </Link>

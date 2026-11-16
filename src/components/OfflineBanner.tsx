@@ -15,7 +15,7 @@ export default function OfflineBanner() {
             className="pointer-events-none absolute -left-24 bottom-0 h-80 w-80 rounded-full blur-3xl"
             style={{
               background:
-                "radial-gradient(circle, rgba(143,174,123,0.18), transparent 70%)",
+                "radial-gradient(circle, var(--glow-green), transparent 70%)",
             }}
             aria-hidden="true"
           />
@@ -25,7 +25,7 @@ export default function OfflineBanner() {
                 <OfflineIcon className="h-3.5 w-3.5 text-success" />
                 Offline-first
               </span>
-              <h2 className="mt-6 text-3xl font-normal leading-[1.15] tracking-[-0.02em] text-white sm:text-4xl">
+              <h2 className="mt-6 text-3xl font-normal leading-[1.15] tracking-[-0.02em] text-foreground sm:text-4xl">
                 No signal? Keep selling.
               </h2>
               <p className="mt-4 max-w-lg text-[15px] leading-[1.65] text-muted">

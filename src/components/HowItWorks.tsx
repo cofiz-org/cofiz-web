@@ -33,7 +33,7 @@ export default function HowItWorks() {
           <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-subtle">
             How it works
           </p>
-          <h2 className="mt-5 text-3xl font-normal leading-[1.15] tracking-[-0.02em] text-white sm:text-4xl lg:text-5xl">
+          <h2 className="mt-5 text-3xl font-normal leading-[1.15] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-5xl">
             From morning price to clean books.
           </h2>
           <p className="mt-6 text-[15px] leading-[1.65] text-muted">
@@ -67,14 +67,14 @@ export default function HowItWorks() {
                         <span
                           className={`text-lg font-medium tracking-[-0.01em] transition-colors ${
                             active
-                              ? "text-white"
-                              : "text-muted group-hover:text-white"
+                              ? "text-foreground"
+                              : "text-muted group-hover:text-foreground"
                           }`}
                         >
                           {step.title}
                         </span>
                         <span
-                          className={`relative h-3 w-3 shrink-0 text-subtle transition-all group-hover:text-zinc-300 ${
+                          className={`relative h-3 w-3 shrink-0 text-subtle transition-all group-hover:text-muted ${
                             active ? "rotate-45" : ""
                           }`}
                           aria-hidden="true"
@@ -122,8 +122,8 @@ export default function HowItWorks() {
                       onClick={() => setTab(value)}
                       className={`rounded-full px-3 py-1 text-[12px] font-medium transition-colors ${
                         tab === value
-                          ? "bg-white text-[#0b0907]"
-                          : "text-muted hover:text-white"
+                          ? "bg-btn text-btn-fg"
+                          : "text-muted hover:text-foreground"
                       }`}
                     >
                       {value === "app" ? "App" : "Sign in"}
@@ -137,7 +137,7 @@ export default function HowItWorks() {
                   className="pointer-events-none absolute -right-16 top-1/4 h-72 w-72 rounded-full blur-3xl"
                   style={{
                     background:
-                      "radial-gradient(circle, rgba(212,115,17,0.22), transparent 70%)",
+                      "radial-gradient(circle, var(--glow-warm-soft), transparent 70%)",
                   }}
                   aria-hidden="true"
                 />
@@ -147,7 +147,7 @@ export default function HowItWorks() {
                   aria-label={tab === "app" ? "Cofiz app demo" : "Sign-in screen"}
                   className="relative w-[232px] sm:w-[256px]"
                 >
-                  <div className="rounded-[30px] border border-line-strong bg-black p-2 shadow-[0_30px_70px_-30px_rgba(0,0,0,0.9)]">
+                  <div className="rounded-[30px] border border-line-strong bg-black p-2 shadow-[var(--shadow-device)]">
                     <div className="overflow-hidden rounded-[24px] bg-chrome">
                       {tab === "app" ? (
                         <video
@@ -182,7 +182,7 @@ export default function HowItWorks() {
                             Sign in with
                           </p>
                           <div className="mt-4 flex items-center gap-4">
-                            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#25D366] text-white">
+                            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#25D366] text-foreground">
                               <WhatsAppIcon className="h-5 w-5" />
                             </span>
                             <span className="flex flex-col items-center gap-1">
@@ -192,7 +192,7 @@ export default function HowItWorks() {
                               </span>
                               <span className="h-4 w-px bg-[#d8d5d1]" />
                             </span>
-                            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#229ED9] text-white">
+                            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#229ED9] text-foreground">
                               <TelegramIcon className="h-5 w-5" />
                             </span>
                           </div>
