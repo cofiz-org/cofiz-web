@@ -1,92 +1,85 @@
-import Image from "next/image";
-import Link from "next/link";
+import Logo from "@/components/Logo";
+import { APK_URL, APK_VERSION, GITHUB_URL } from "@/site";
 
-const APK_URL = "https://github.com/cofiz-org/cofiz-dist/releases/latest";
-
-const product = [
-  { label: "Features", href: "#features" },
-  { label: "Download APK", href: APK_URL },
-  { label: "Changelog", href: "#changelog" },
-  { label: "Pricing", href: "#pricing" },
-];
-
-const connect = [
-  { label: "Telegram", href: "https://t.me/cofiz" },
-  { label: "Book a demo", href: "#demo" },
-  { label: "Sign in", href: "#signin" },
+const columns = [
+  {
+    title: "Product",
+    links: [
+      { label: "Features", href: "#features" },
+      { label: "How it works", href: "#how-it-works" },
+      { label: "Download APK", href: APK_URL },
+      { label: "FAQ", href: "#faq" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "GitHub", href: GITHUB_URL },
+      {
+        label: "Releases",
+        href: "https://github.com/cofiz-org/cofiz-dist/releases",
+      },
+    ],
+  },
+  {
+    title: "Coverage",
+    links: [
+      { label: "Daily prices", href: "#prices" },
+      { label: "Collector cash", href: "#collectors" },
+      { label: "Debts", href: "#debts" },
+      { label: "Reports", href: "#reports" },
+    ],
+  },
 ];
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-line bg-white">
-      <div className="mx-auto max-w-6xl px-6 py-14">
-        <div className="grid grid-cols-[2fr_1fr_1fr] gap-10 max-md:grid-cols-1">
-          <div>
-            <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="/logo.png"
-                alt="Cofiz logo"
-                width={25}
-                height={32}
-                className="h-8 w-auto"
-                unoptimized
-              />
-              <span className="text-[17px] font-bold tracking-tight text-primary">
-                Cofiz
-              </span>
-            </Link>
-            <p className="mt-4 max-w-xs text-[13px] leading-6 text-muted">
-              One shared ledger for Ethiopian coffee businesses. Daily
-              prices, sales, debts and reports — even offline.
+    <footer className="border-t border-line bg-page px-6 pt-16 lg:px-12 lg:pt-20">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr_1fr_1fr] lg:gap-12">
+          <div className="lg:col-span-1">
+            <Logo />
+            <p className="mt-5 max-w-xs text-[14px] leading-[1.7] text-muted">
+              One shared ledger for Ethiopian coffee businesses. Prices, cash,
+              purchases, debts and reports — even offline.
             </p>
-            <div className="mt-5 flex items-center gap-2">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute h-full w-full animate-ping rounded-full bg-green-500 opacity-60" />
-                <span className="h-2 w-2 rounded-full bg-green-500" />
+            <p className="mt-6 inline-flex items-center gap-2 rounded-full border border-line bg-block px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.12em] text-subtle">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute h-full w-full animate-ping rounded-full bg-success opacity-60" />
+                <span className="h-1.5 w-1.5 rounded-full bg-success" />
               </span>
-              <p className="text-xs font-medium text-muted">
-                v1.0.4 · Latest APK available now
-              </p>
-            </div>
+              {APK_VERSION} · Available now
+            </p>
           </div>
-          <nav aria-label="Product">
-            <p className="text-xs font-bold tracking-[0.15em] text-ink/50 uppercase">
-              Product
-            </p>
-            <ul className="mt-4 space-y-2.5">
-              {product.map((l) => (
-                <li key={l.label}>
-                  <a
-                    href={l.href}
-                    className="text-sm font-medium text-ink/75 transition-colors hover:text-primary"
-                  >
-                    {l.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <nav aria-label="Connect">
-            <p className="text-xs font-bold tracking-[0.15em] text-ink/50 uppercase">
-              Connect
-            </p>
-            <ul className="mt-4 space-y-2.5">
-              {connect.map((l) => (
-                <li key={l.label}>
-                  <a
-                    href={l.href}
-                    className="text-sm font-medium text-ink/75 transition-colors hover:text-primary"
-                  >
-                    {l.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
+
+          <div className="grid grid-cols-2 gap-10 lg:col-span-3 lg:grid-cols-3 lg:gap-12">
+            {columns.map((column) => (
+              <nav key={column.title} aria-label={column.title}>
+                <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-subtle">
+                  {column.title}
+                </p>
+                <ul className="mt-5 space-y-3">
+                  {column.links.map((link) => (
+                    <li key={link.label}>
+                      <a
+                        href={link.href}
+                        className="text-[14px] text-muted transition-colors hover:text-white"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            ))}
+          </div>
         </div>
-        <div className="mt-12 flex items-center justify-between border-t border-line pt-6 max-md:flex-col max-md:gap-3">
-          <p className="text-xs text-muted">© 2026 Cofiz. All rights reserved.</p>
-          <p className="text-xs text-muted">
+
+        <div className="mt-14 flex flex-col gap-3 py-6 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-[12px] text-subtle">
+            © 2026 Cofiz. All rights reserved.
+          </p>
+          <p className="text-[12px] text-subtle">
             Made for Ethiopian coffee businesses.
           </p>
         </div>
