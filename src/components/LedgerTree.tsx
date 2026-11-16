@@ -21,7 +21,7 @@ export default function LedgerTree() {
           <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-subtle">
             Permissions
           </p>
-          <h2 className="mt-5 text-3xl font-normal leading-[1.15] tracking-[-0.02em] text-white sm:text-4xl lg:text-5xl">
+          <h2 className="mt-5 text-3xl font-normal leading-[1.15] tracking-[-0.02em] text-foreground sm:text-4xl lg:text-5xl">
             Set the price once. Every phone knows.
           </h2>
           <p className="mt-6 max-w-lg text-[15px] leading-[1.65] text-muted">
@@ -49,7 +49,7 @@ export default function LedgerTree() {
         <div className="frame reveal">
           <div className="rounded-[16px] bg-block px-6 py-10 sm:px-10 lg:py-14">
             <div className="mx-auto w-fit rounded-lg border border-line-strong bg-chrome px-5 py-2.5">
-              <p className="flex items-center gap-2.5 text-[13px] font-medium text-white">
+              <p className="flex items-center gap-2.5 text-[13px] font-medium text-foreground">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 Admin
               </p>
@@ -67,7 +67,7 @@ export default function LedgerTree() {
                   <div key={branch.title} className="flex flex-col items-center">
                     <div className="h-6 w-px bg-line" />
                     <div className="w-full rounded-lg border border-line-strong bg-chrome px-3 py-3 text-center">
-                      <p className="text-[13px] font-medium text-white">
+                      <p className="text-[13px] font-medium text-foreground">
                         {branch.title}
                       </p>
                       <p className="mt-0.5 text-[10px] text-subtle">
