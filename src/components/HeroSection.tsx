@@ -22,19 +22,19 @@ const bars = Array.from({ length: 44 }, (_, i) => ({
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-page px-6 pb-14 pt-28 lg:px-12 lg:pb-16">
+    <section className="relative px-6 pb-14 pt-28 lg:px-12 lg:pb-16">
       <div className="frame rise-in mx-auto flex max-w-[88rem] flex-col">
         <div className="relative flex flex-col justify-center overflow-hidden rounded-[16px] bg-block p-8 lg:min-h-[420px] lg:p-14 lg:pt-[7.5rem]">
           <div
             className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full blur-3xl"
             style={{
               background:
-                "radial-gradient(circle, rgba(212,115,17,0.28), transparent 70%)",
+                "radial-gradient(circle, var(--glow-warm), transparent 70%)",
             }}
             aria-hidden="true"
           />
           <div className="relative flex flex-col items-start">
-            <h1 className="max-w-3xl text-balance text-4xl font-normal leading-[1.1] tracking-[-0.02em] text-white sm:text-5xl lg:text-6xl">
+            <h1 className="max-w-3xl text-balance text-4xl font-normal leading-[1.1] tracking-[-0.02em] text-foreground sm:text-5xl lg:text-6xl">
               One shared ledger for your whole coffee business.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted">
@@ -46,7 +46,7 @@ export default function HeroSection() {
               <DownloadButton />
               <a
                 href="#how-it-works"
-                className="inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-medium text-muted transition-colors hover:text-white sm:px-7 sm:py-3.5"
+                className="inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-medium text-muted transition-colors hover:text-foreground sm:px-7 sm:py-3.5"
               >
                 See how it works
               </a>
@@ -60,19 +60,19 @@ export default function HeroSection() {
               className="pointer-events-none absolute -right-10 bottom-14 h-64 w-64 rounded-full opacity-60 blur-3xl transition-opacity duration-500 ease-out group-hover:opacity-100"
               style={{
                 background:
-                  "radial-gradient(circle, rgba(212,115,17,0.30), transparent 70%)",
+                  "radial-gradient(circle, var(--glow-warm), transparent 70%)",
               }}
               aria-hidden="true"
             />
             <div
-              className="pointer-events-none absolute -bottom-[4%] -right-[7%] w-[54%] max-w-[440px] text-[#6b5745] opacity-75 transition-opacity duration-500 ease-out group-hover:opacity-100 md:-right-[9%] md:w-[76%]"
+              className="pointer-events-none absolute -bottom-[4%] -right-[7%] w-[54%] max-w-[440px] text-[var(--cube-stroke)] opacity-70 transition-opacity duration-500 ease-out group-hover:opacity-100 md:-right-[9%] md:w-[76%]"
               aria-hidden="true"
             >
               <svg viewBox="0 0 700 440" className="h-auto w-full">
                 <defs>
                   <linearGradient id="bentoTopFace" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#4a3423" />
-                    <stop offset="100%" stopColor="#38271b" />
+                    <stop offset="0%" style={{ stopColor: "var(--cube-top-a)" }} />
+                    <stop offset="100%" style={{ stopColor: "var(--cube-top-b)" }} />
                   </linearGradient>
                   <linearGradient
                     id="bentoLeftFace"
@@ -81,8 +81,8 @@ export default function HeroSection() {
                     x2="1"
                     y2="0"
                   >
-                    <stop offset="0%" stopColor="#302218" />
-                    <stop offset="100%" stopColor="#251a12" />
+                    <stop offset="0%" style={{ stopColor: "var(--cube-left-a)" }} />
+                    <stop offset="100%" style={{ stopColor: "var(--cube-left-b)" }} />
                   </linearGradient>
                   <linearGradient
                     id="bentoRightFace"
@@ -91,8 +91,8 @@ export default function HeroSection() {
                     x2="1"
                     y2="0"
                   >
-                    <stop offset="0%" stopColor="#1e150f" />
-                    <stop offset="100%" stopColor="#271c13" />
+                    <stop offset="0%" style={{ stopColor: "var(--cube-right-a)" }} />
+                    <stop offset="100%" style={{ stopColor: "var(--cube-right-b)" }} />
                   </linearGradient>
                 </defs>
                 <g transform="translate(410 0)">
@@ -205,19 +205,19 @@ export default function HeroSection() {
               className="pointer-events-none absolute inset-0"
               style={{
                 background:
-                  "linear-gradient(to right, #171210 30%, rgba(23,18,16,0.55) 55%, transparent)",
+                  "var(--hero-fade)",
               }}
               aria-hidden="true"
             />
             <div className="relative">
-              <h2 className="text-xl font-medium leading-snug tracking-[-0.01em] text-white lg:text-2xl">
+              <h2 className="text-xl font-medium leading-snug tracking-[-0.01em] text-foreground lg:text-2xl">
                 Set it once. Sell all day.
               </h2>
               <ul className="mt-5 grid w-fit grid-cols-2 gap-x-8 gap-y-2">
                 {ledgerSteps.map((step, i) => (
                   <li
                     key={step}
-                    className="font-mono text-[12px] text-subtle transition-colors duration-300 group-hover:text-zinc-300"
+                    className="font-mono text-[12px] text-subtle transition-colors duration-300 group-hover:text-foreground"
                     style={{ transitionDelay: `${i * 45}ms` }}
                   >
                     {step}
@@ -229,7 +229,7 @@ export default function HeroSection() {
 
           <div className="relative flex min-h-[200px] flex-col items-center overflow-hidden rounded-[16px] bg-block p-7 text-center transition-colors duration-300 hover:bg-block-hover md:min-h-[300px] md:p-8 lg:p-12">
             <div>
-              <h2 className="text-xl font-medium leading-snug tracking-[-0.01em] text-white lg:text-2xl">
+              <h2 className="text-xl font-medium leading-snug tracking-[-0.01em] text-foreground lg:text-2xl">
                 A ledger that remembers
               </h2>
               <p className="mx-auto mt-3 max-w-[30ch] text-sm leading-relaxed text-muted">
@@ -261,13 +261,13 @@ export default function HeroSection() {
               className="pointer-events-none absolute -bottom-24 -right-16 h-80 w-80 rounded-full blur-2xl transition-transform duration-500 ease-out group-hover:scale-110"
               style={{
                 background:
-                  "radial-gradient(circle, rgba(212,115,17,0.55), rgba(212,115,17,0.14) 45%, transparent 72%)",
+                  "radial-gradient(circle, var(--glow-warm-strong), var(--glow-warm-mid) 45%, transparent 72%)",
               }}
               aria-hidden="true"
             />
             <div className="relative flex h-full flex-col justify-between gap-3 p-7 md:p-8 lg:p-12">
               <div
-                className="flex w-fit max-w-full items-center gap-5 text-muted transition-colors duration-300 group-hover:text-zinc-200"
+                className="flex w-fit max-w-full items-center gap-5 text-muted transition-colors duration-300 group-hover:text-foreground"
                 aria-hidden="true"
               >
                 <TelegramIcon className="h-6 w-6 shrink-0" />
@@ -275,10 +275,10 @@ export default function HeroSection() {
                 <UsersIcon className="h-6 w-6 shrink-0" />
               </div>
               <div>
-                <p className="text-xl font-medium leading-snug tracking-[-0.01em] text-white lg:text-2xl">
+                <p className="text-xl font-medium leading-snug tracking-[-0.01em] text-foreground lg:text-2xl">
                   One tap to sign in
                 </p>
-                <div className="mt-3 font-mono text-[11px] uppercase tracking-[0.14em] text-muted transition-colors duration-300 group-hover:text-zinc-200">
+                <div className="mt-3 font-mono text-[11px] uppercase tracking-[0.14em] text-muted transition-colors duration-300 group-hover:text-foreground">
                   Telegram &amp; WhatsApp · no passwords
                   <ArrowUpRightIcon className="ml-2 inline-block h-3 w-3 -translate-x-1 align-[-1px] opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 group-focus-visible:translate-x-0 group-focus-visible:opacity-100" />
                 </div>
