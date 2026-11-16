@@ -1,20 +1,26 @@
 import type { Metadata } from "next";
-import { DM_Sans } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Cofiz · One shared ledger for your whole coffee business",
+  title: "Cofiz · One shared ledger for your coffee business",
   description:
-    "What one person records, the whole business sees. Daily prices, workers, debts and sales — set it in the app or track it from Telegram.",
+    "Daily prices, collector cash, purchases, debts and reports — one ledger your whole team can see.",
   icons: {
-    icon: "/icon-bg.jpg",
-    apple: "/icon-bg.jpg",
+    icon: "/icon-bgless.png",
+    apple: "/icon-bgless.png",
   },
 };
 
@@ -24,8 +30,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${dmSans.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-white text-ink">
+    <html
+      lang="en"
+      className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
+    >
+      <body className="flex min-h-full flex-col bg-page text-foreground">
         {children}
       </body>
     </html>
