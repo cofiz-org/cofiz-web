@@ -84,7 +84,7 @@ export default function FeatureGrid() {
             <p className="font-mono text-[10px] uppercase tracking-[0.15em] text-subtle">
               Everything included
             </p>
-            <h2 className="mt-5 text-3xl font-normal leading-[1.15] tracking-[-0.02em] text-white sm:text-4xl">
+            <h2 className="mt-5 text-3xl font-normal leading-[1.15] tracking-[-0.02em] text-foreground sm:text-4xl">
               One app. The whole book.
             </h2>
           </div>
@@ -102,7 +102,7 @@ export default function FeatureGrid() {
               className={`group relative flex min-h-[232px] scroll-mt-24 flex-col rounded-[16px] bg-block p-8 transition-colors duration-300 hover:bg-block-hover ${span}`}
             >
               <Icon className="h-5 w-5 text-subtle transition-colors duration-300 group-hover:text-accent-light" />
-              <h3 className="mt-6 text-xl font-medium tracking-[-0.01em] text-white">
+              <h3 className="mt-6 text-xl font-medium tracking-[-0.01em] text-foreground">
                 {title}
               </h3>
               <p className="mt-2 max-w-[42ch] text-[15px] leading-[1.65] text-muted">
