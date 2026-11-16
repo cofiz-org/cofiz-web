@@ -58,7 +58,7 @@ export default function Faq() {
             FAQ
           </p>
           <div className="relative mt-10">
-            <h2 className="text-3xl font-normal leading-[1.15] tracking-[-0.02em] text-white sm:text-4xl">
+            <h2 className="text-3xl font-normal leading-[1.15] tracking-[-0.02em] text-foreground sm:text-4xl">
               Questions,
               <br />
               answered.
@@ -69,7 +69,7 @@ export default function Faq() {
             </p>
             <a
               href={APK_URL}
-              className="mt-6 inline-flex items-center gap-2 rounded-md border border-line-strong bg-chrome px-4 py-2.5 text-[13px] font-medium text-white transition-colors hover:bg-block-hover"
+              className="mt-6 inline-flex items-center gap-2 rounded-md border border-line-strong bg-chrome px-4 py-2.5 text-[13px] font-medium text-foreground transition-colors hover:bg-block-hover"
             >
               Download the APK
             </a>
@@ -93,7 +93,7 @@ export default function Faq() {
                 >
                   <span
                     className={`text-[15px] font-medium transition-colors ${
-                      isOpen ? "text-white" : "text-muted group-hover:text-white"
+                      isOpen ? "text-foreground" : "text-muted group-hover:text-foreground"
                     }`}
                   >
                     {item.q}
